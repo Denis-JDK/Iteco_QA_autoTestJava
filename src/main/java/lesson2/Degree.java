@@ -11,5 +11,6 @@ public class Degree {
             double result = Math.pow(count, 3);
             System.out.println(result);
         }
+
     }
 }
