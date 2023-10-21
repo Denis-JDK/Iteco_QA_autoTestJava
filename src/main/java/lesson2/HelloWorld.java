@@ -71,6 +71,30 @@ public class HelloWorld {
         }
         System.out.println(count);
 
+
+        int countNew=0;
+
+        for (int i = 0; i < b.length(); i++) {
+            for (int j = 0; j < a.length(); j++) {
+                if (b.charAt(i+j)!=a.charAt(j)){
+                    break;
+                }
+                if (j == a.length()-1){
+                    countNew++;
+                }
+            }
+        }
+        System.out.println(countNew);
+
+        int s = 10;
+
+        for (int i = 0; i < s; i++) {
+            if (i%2!=0 && i%3!=0 && i%5!=0){
+                System.out.println(i);
+            }
+
+        }
+
     }
 
 }
