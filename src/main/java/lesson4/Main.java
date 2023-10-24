@@ -17,5 +17,29 @@ public class Main {
             System.out.println("Имя "+student.getSurname()+" "+student.getAbb()+" номер группы "+student.getGroupNumber());
         }
 
+        Variable variable = new Variable();
+        variable.setA(3);
+        variable.setB(5);
+
+        variable.printA();
+        variable.printB();
+        System.out.println(variable.sumVariable());
+        System.out.println(variable.maxVariable());
+
+
+        Counter counter1=new Counter();
+        Counter counter2=new Counter(11);
+
+        System.out.println(counter1.getCurrentValue());
+        System.out.println(counter2.getCurrentValue());
+
+        DynamicArray dynamicArray=new DynamicArray();
+        DynamicArray dynamicArray1=new DynamicArray(4);
+
+        dynamicArray.generateRandomArray(5);
+        dynamicArray1.generateRandomArray(7);
     }
+
+
+
 }
