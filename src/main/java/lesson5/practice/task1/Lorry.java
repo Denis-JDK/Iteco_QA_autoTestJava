@@ -9,7 +9,29 @@ public class Lorry extends Car{
     }
 
     @Override
+    public void start() {
+        System.out.println("Поехал грузовик!");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Останавливается грузовик!");
+    }
+
+    @Override
+    public void turnRight() {
+        super.turnRight();
+    }
+
+    @Override
+    public void turnLeft() {
+        super.turnLeft();
+    }
+
+    @Override
     public String toString() {
-        return super.toString();
+        return "Lorry{" +
+                "carrying=" + carrying +
+                '}';
     }
 }
