@@ -25,16 +25,22 @@ public class Main {
         System.out.println(Size.XXS.getDescription());
 
 
-        Clothes tshirt = new Tshirt(Size.L, 150, "Red");
+        Tshirt tshirt = new Tshirt(Size.L, 150, "Red");
         Skirt skirt = new Skirt(Size.S, 300, "Blue");
         Trousers trousers = new Trousers(Size.M, 350, "Gre");
         Tie tie = new Tie(Size.XS, 200, "Orange");
+
+        List<WomenClothes> clothesWomen= Arrays.asList(skirt,trousers);
+        List<ManClothes> clothesMan= Arrays.asList(trousers,tshirt,tie);
+
 
 
         List<Clothes> list = Arrays.asList(tie,tshirt,skirt,trousers, tie);
 
         MakeClothes manClothes = new MakeClothes();
         manClothes.dressMan(list);
+
+        manClothes.dressMan(clothesWomen, clothesMan);
 
         }
 }
