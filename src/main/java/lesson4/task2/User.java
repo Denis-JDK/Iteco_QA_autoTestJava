@@ -66,13 +66,34 @@ public class User {
         return max;
 
     }
+    public static String fiveNumber(List<User>list){
+        String place=" ";
+        for (int i = 0; i < list.size(); i++) {
+            char[] arrayStr=list.get(i).numberCart.toCharArray();
+            String j = String.valueOf(arrayStr[0]);
+            if (j.equals("5")){
+                place =  list.get(i).place;
+                break;
+            }
+        }
+        return place;
+    }
+
+    public static List<User> preName(List<User>list){
+       List<User> prename=new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getRrename().equals("Евгеньевич"))
+                prename.add(list.get(i));
+        }
+        return prename;
+    }
 
 
     public static void main(String[] args) {
         User user = new User("Норма","Кеке", "Отчество","Place1", "566783456789234", 67464583);
-        User user1 = new User("Норма13er","Кеке4", "Отчество4","Place2", "986863456789234", 46432583);
-        User user2 = new User("Норма2","Кеке3455", "Отчество5","Place3", "54323456789234", 346432583);
-        User user3 = new User("Норма3","Кеке74", "Отчество6","Place4", "983456789234", 546432583);
+        User user1 = new User("Норма13er","Кеке4", "Евгеньевич","Place2", "986863456789234", 46432583);
+        User user2 = new User("Норма2","Кеке3455", "Евгеньевич","Place3", "54323456789234", 346432583);
+        User user3 = new User("Норма3","Кеке74", "Евгеньевич","Place4", "983456789234", 546432583);
         User user4 = new User("Норма4","Кеке6768", "Отчество7","Place5", "7783456789234", 946432583);
 
        List<User> list = Arrays.asList(user1,user2,user4,user3,user);
@@ -82,7 +103,12 @@ public class User {
        String name = longSurname(list);
         System.out.println(name);
 
+        String place = fiveNumber(list);
+        System.out.println(place);
 
+        List<User> users = preName(list);
+
+        System.out.println(users.size());
 
     }
 
