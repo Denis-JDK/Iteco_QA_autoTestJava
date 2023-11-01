@@ -2,6 +2,7 @@ package lesson6.hometasks.task1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class GenericNumber {
@@ -26,17 +27,13 @@ public class GenericNumber {
             return result;
     }
     public static <T>List<T> chengArrayElements(List<T> list){
-        List<T>result= new ArrayList<>();
-        int count =0;
-        for (int i = 0; i < list.size(); i++) {
-            if(i+1<=list.size()||count<=list.size()) {
-                result.add(i,list.get(count+1));
-           //     count = count+1;
-                result.add(i+1,list.get(count+1));
-                count++;
-            }
+        for (int i = 0; i < list.size(); i+=2) {
+            T temp = list.get(i);
+            list.set(i, list.get(i+1));
+            list.set(i+1, temp);
         }
-        return result;
+        return list;
+
     }
 
 
@@ -58,6 +55,7 @@ public class GenericNumber {
         integerList.add(109);
         List<Integer> res = chengArrayElements(integerList);
         res.forEach(it-> System.out.println(it));
+
 
 
 
