@@ -1,5 +1,4 @@
 package lesson6.hometasks.task1;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,6 +16,7 @@ public class GenericNumber {
     // Напишите общий метод для обмена позициями двух разных элементов в массиве.
     //Аргументы дженерик метода: список с элементами типа Type, индекс элемента a, индекс элемента b.
     //Результат - поменять значения элементов a и b местами в списке.
+
     public static <T> List <T> getGenericNumber(List<? extends Number> list){
         List<T>result=new ArrayList<>();
         list.forEach(it-> {
@@ -26,6 +26,7 @@ public class GenericNumber {
         });
             return result;
     }
+
     public static <T>List<T> chengArrayElements(List<T> list){
         for (int i = 0; i < list.size(); i+=2) {
             T temp = list.get(i);
@@ -46,6 +47,8 @@ public class GenericNumber {
         List<Double> result = getGenericNumber(list);
         result.stream().forEach(it-> System.out.println(it));
 
+
+
         List<Integer>integerList= new ArrayList<>();
         integerList.add(1);
         integerList.add(8);
@@ -55,7 +58,6 @@ public class GenericNumber {
         integerList.add(109);
         List<Integer> res = chengArrayElements(integerList);
         res.forEach(it-> System.out.println(it));
-
 
 
 
